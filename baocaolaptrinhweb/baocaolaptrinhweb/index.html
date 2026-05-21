@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>T.M.H Menswear</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+      <div class="logo">T.M.H</div>
+
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Tìm sản phẩm..." />
+
+        <button id="search-submit">🔍</button>
+      </div>
+
+      <div class="nav-icons">
+        <span class="auth-btn" id="auth-trigger"> 👤 Đăng nhập / Đăng ký </span>
+
+        <span class="cart-btn">
+          Giỏ hàng (
+          <span id="cart-count"> 0 </span>
+          )
+        </span>
+      </div>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero-banner">
+      <div class="banner-content">
+        <h1>T.M.H</h1>
+
+        <p>Tinh giản trong thiết kế - Tinh tế trong từng chi tiết</p>
+      </div>
+    </section>
+
+    <!-- DANH MỤC -->
+
+    <section class="mega-categories">
+      <h2 class="section-title">BỘ SƯU TẬP CHÍNH</h2>
+
+      <div class="categories-grid">
+        <!-- ÁO -->
+
+        <div class="category-box" data-category="ao">
+          <div class="category-image">
+            <img src="anh-san-pham/san pham ao/anh-nen.png" alt="Áo nam" />
+          </div>
+
+          <div class="category-overlay">
+            <h3>ÁO NAM</h3>
+
+            <p>Sơ mi, Polo, Áo thun</p>
+
+            <span class="view-more"> Xem sản phẩm → </span>
+          </div>
+        </div>
+
+        <!-- QUẦN -->
+
+        <div class="category-box" data-category="quan">
+          <div class="category-image">
+            <img
+              src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=700"
+              alt="Quần nam"
+            />
+          </div>
+
+          <div class="category-overlay">
+            <h3>QUẦN NAM</h3>
+
+            <p>Denim, Khaki, Quần tây</p>
+
+            <span class="view-more"> Xem sản phẩm → </span>
+          </div>
+        </div>
+
+        <!-- TRANG SỨC -->
+
+        <div class="category-box" data-category="trang-suc">
+          <div class="category-image">
+            <img
+              src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=700"
+              alt="Trang sức"
+            />
+          </div>
+
+          <div class="category-overlay">
+            <h3>TRANG SỨC</h3>
+
+            <p>Nhẫn bạc, vòng tay</p>
+
+            <span class="view-more"> Xem sản phẩm → </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SẢN PHẨM -->
+
+    <main class="main-container">
+      <section class="products-section">
+        <h2 class="section-title">SẢN PHẨM</h2>
+
+        <div class="products-grid" id="products-list">
+          <!-- ÁO THUN -->
+
+          <div
+            class="product-card"
+            data-type="ao"
+            data-name="ao thun bong huu co"
+          >
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500"
+              />
+            </div>
+
+            <div class="product-info">
+              <p class="product-tag">ÁO NAM</p>
+
+              <p class="product-title">Áo thun hữu cơ</p>
+
+              <p class="product-price">299.000 đ</p>
+
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+
+          <!-- SƠ MI CÔNG SỞ -->
+
+          <div class="product-card" data-type="ao" data-name="ao so mi cong so">
+            <div class="product-image">
+              <img src="anh-san-pham/san pham ao/so-mi2.png" />
+            </div>
+
+            <div class="product-info">
+              <p class="product-tag">ÁO NAM</p>
+
+              <p class="product-title">Sơ mi công sở</p>
+
+              <p class="product-price">350.000 đ</p>
+
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+
+          <!-- SƠ MI CAO CẤP -->
+
+          <div class="product-card" data-type="ao" data-name="ao so mi cao cap">
+            <div class="product-image">
+              <img src="anh-san-pham/san pham ao/so-mi1.png" />
+            </div>
+
+            <div class="product-info">
+              <p class="product-tag">ÁO NAM</p>
+
+              <p class="product-title">Sơ mi cao cấp</p>
+
+              <p class="product-price">799.000 đ</p>
+
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+
+          <!-- QUẦN -->
+
+          <div class="product-card" data-type="quan" data-name="quan denim">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500"
+              />
+            </div>
+
+            <div class="product-info">
+              <p class="product-tag">QUẦN NAM</p>
+
+              <p class="product-title">Quần denim dáng suông</p>
+
+              <p class="product-price">699.000 đ</p>
+
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+
+          <!-- NHẪN -->
+
+          <div
+            class="product-card"
+            data-type="trang-suc"
+            data-name="nhan bac toi gian"
+          >
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=500"
+              />
+            </div>
+
+            <div class="product-info">
+              <p class="product-tag">TRANG SỨC</p>
+
+              <p class="product-title">Nhẫn bạc tối giản</p>
+
+              <p class="product-price">450.000 đ</p>
+
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- MODAL -->
+
+    <div class="auth-modal" id="auth-modal">
+      <div class="modal-box">
+        <span class="close-modal" id="close-modal"> × </span>
+
+        <div class="modal-tabs">
+          <button class="tab-btn active" id="tab-login">Đăng nhập</button>
+
+          <button class="tab-btn" id="tab-register">Đăng ký</button>
+        </div>
+
+        <form id="form-login" class="auth-form active">
+          <div class="input-group">
+            <label> Email </label>
+
+            <input type="email" required />
+          </div>
+
+          <div class="input-group">
+            <label> Mật khẩu </label>
+
+            <input type="password" required />
+          </div>
+
+          <button class="auth-submit-btn" type="submit">ĐĂNG NHẬP</button>
+        </form>
+
+        <form id="form-register" class="auth-form">
+          <div class="input-group">
+            <label> Họ tên </label>
+
+            <input type="text" required />
+          </div>
+
+          <div class="input-group">
+            <label> Email </label>
+
+            <input type="email" required />
+          </div>
+
+          <button class="auth-submit-btn" type="submit">ĐĂNG KÝ</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">© 2026 T.M.H Menswear</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
