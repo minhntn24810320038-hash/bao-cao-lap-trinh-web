@@ -1,5 +1,5 @@
 /* ===========================
-   RESET
+    RESET
 =========================== */
 * {
   margin: 0;
@@ -24,11 +24,8 @@ img {
 }
 
 /* ===========================
-   NAVBAR
+    NAVBAR & MENU
 =========================== */
-/* ===================================================
-   TỐI ƯU NAVBAR (THÊM MENU ĐIỀU HƯỚNG TRANG CHỦ)
-=================================================== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -41,11 +38,10 @@ img {
   z-index: 100;
 }
 
-/* Gom cụm Logo và Menu về bên trái */
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 40px; /* Khoảng cách giữa Logo và chữ Trang chủ */
+  gap: 40px;
 }
 
 .logo {
@@ -55,14 +51,15 @@ img {
   color: #7f1d1d;
 }
 
-.menu {
+.nav-menu {
   display: flex;
-  gap: 25px; /* Khoảng cách giữa nút Trang chủ và Sơ mi nam */
+  align-items: center;
+  gap: 20px;
 }
 
 .nav-link {
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
   color: #555;
   transition: 0.2s;
 }
@@ -71,10 +68,18 @@ img {
   color: #7f1d1d;
 }
 
-/* Làm nổi bật trang hiện tại khách đang xem */
-.active-link {
-  color: #7f1d1d;
+.nav-link-btn {
+  background: none;
+  border: none;
+  font-size: 15px;
   font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-link-btn:hover {
+  color: #7f1d1d;
 }
 
 .cart-btn {
@@ -86,8 +91,9 @@ img {
 .cart-btn:hover {
   color: #7f1d1d;
 }
+
 /* ===========================
-   HERO SLIDESHOW EFFECT
+    HERO SLIDESHOW EFFECT
 =========================== */
 .hero {
   height: 380px;
@@ -145,7 +151,7 @@ img {
 }
 
 /* ===========================
-   CONTAINER & PRODUCT CARDS
+    CONTAINER & PRODUCT CARDS
 =========================== */
 .container {
   max-width: 1400px;
@@ -160,7 +166,6 @@ img {
   letter-spacing: 2px;
 }
 
-/* Ép cố định chia thành 4 cột đều nhau trên màn hình PC lớn */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -202,6 +207,9 @@ img {
 .product-info h3 {
   margin-bottom: 10px;
   font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .price {
@@ -227,7 +235,7 @@ button.add-to-cart-btn:hover {
 }
 
 /* ===========================
-   GIỎ HÀNG SIDEBAR
+    GIỎ HÀNG SIDEBAR
 =========================== */
 .cart-sidebar {
   position: fixed;
@@ -310,7 +318,7 @@ button.add-to-cart-btn:hover {
 }
 
 .cart-item-title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   margin-bottom: 5px;
 }
@@ -389,8 +397,311 @@ button.add-to-cart-btn:hover {
   background: #5c1414;
 }
 
+/* ===================================================
+    GIAO DIỆN POP-UP CHỌN SIZE KHI MUA HÀNG
+=================================================== */
+.size-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.size-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.size-modal-content {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  padding: 25px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+.modal-product-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.modal-preview-img {
+  width: 130px;
+  height: 170px;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+.modal-product-details {
+  flex: 1;
+}
+.modal-product-details h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #111;
+}
+.modal-product-price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #7f1d1d;
+  margin-bottom: 15px;
+}
+.section-label {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.size-options-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.size-option-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.size-option-btn:hover {
+  border-color: #7f1d1d;
+  color: #7f1d1d;
+}
+.size-option-btn.selected {
+  border-color: #7f1d1d;
+  background: #7f1d1d;
+  color: white;
+  font-weight: 600;
+}
+.modal-submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #111;
+  color: white;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.modal-submit-btn:hover {
+  background: #333;
+}
+.modal-submit-btn:disabled {
+  background: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* ===================================================
+    GIAO DIỆN BẢNG TƯ VẤN CHỌN SIZE (CONSULT MODAL)
+=================================================== */
+.consult-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.consult-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.consult-modal-content {
+  background: white;
+  width: 90%;
+  max-width: 550px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.close-consult-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+}
+.consult-modal-content h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #7f1d1d;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.consult-subtitle {
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.consult-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.consult-table th {
+  background: #7f1d1d;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.consult-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #333;
+}
+.consult-table tr:hover td {
+  background: #fdfcf9;
+}
+.consult-note {
+  background: #f7f5f0;
+  padding: 12px;
+  border-left: 3px solid #7f1d1d;
+}
+.consult-note p {
+  font-size: 12.5px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ===================================================
+    GIAO DIỆN AUTH MODAL CHO TRANG ÁO NAM
+=================================================== */
+.auth-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 2000;
+}
+
+.auth-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  width: 400px;
+  background: white;
+  padding: 30px;
+  position: relative;
+  border-radius: 4px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #333;
+}
+
+.modal-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tab-btn {
+  padding: 4px 8px;
+  background: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tab-btn.active {
+  background: #f0f0f0;
+  font-weight: bold;
+  border-color: #333;
+}
+
+.auth-form {
+  display: none;
+  margin-top: 20px;
+}
+
+.auth-form.active {
+  display: block;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #7f1d1d;
+  color: white;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.auth-submit-btn:hover {
+  background: #5c1414;
+}
+
 /* ===========================
-   FOOTER & RESPONSIVE ĐA MÀN HÌNH
+    FOOTER & RESPONSIVE
 =========================== */
 footer {
   text-align: center;
@@ -399,24 +710,29 @@ footer {
   margin-top: 50px;
 }
 
-/* Máy tính bảng / Laptop nhỏ: Hiển thị 3 cột */
 @media (max-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Điện thoại di động: Hiển thị 2 cột gọn gàng */
 @media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  .nav-left {
+    flex-direction: column;
+    gap: 10px;
+  }
   .hero h1 {
     font-size: 30px;
   }
-
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
-
   .cart-container {
     width: 100%;
   }
