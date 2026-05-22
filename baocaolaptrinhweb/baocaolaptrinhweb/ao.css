@@ -1,0 +1,423 @@
+/* ===========================
+   RESET
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: #fbfaf7;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+/* ===================================================
+   TỐI ƯU NAVBAR (THÊM MENU ĐIỀU HƯỚNG TRANG CHỦ)
+=================================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5%;
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Gom cụm Logo và Menu về bên trái */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Khoảng cách giữa Logo và chữ Trang chủ */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #7f1d1d;
+}
+
+.menu {
+  display: flex;
+  gap: 25px; /* Khoảng cách giữa nút Trang chủ và Sơ mi nam */
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  color: #7f1d1d;
+}
+
+/* Làm nổi bật trang hiện tại khách đang xem */
+.active-link {
+  color: #7f1d1d;
+  font-weight: 500;
+}
+
+.cart-btn {
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.cart-btn:hover {
+  color: #7f1d1d;
+}
+/* ===========================
+   HERO SLIDESHOW EFFECT
+=========================== */
+.hero {
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #333;
+}
+
+.hero .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 1;
+}
+
+.hero .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero .slide.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+  font-size: 45px;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  color: #e5e5e5;
+  font-weight: 300;
+}
+
+/* ===========================
+   CONTAINER & PRODUCT CARDS
+=========================== */
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 60px 5%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+
+/* Ép cố định chia thành 4 cột đều nhau trên màn hình PC lớn */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.product-card {
+  background: white;
+  padding: 15px;
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.product-image {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.product-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  margin-top: 15px;
+}
+
+.tag {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.product-info h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.price {
+  color: #7f1d1d;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+button.add-to-cart-btn {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #7f1d1d;
+  background: white;
+  color: #7f1d1d;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+button.add-to-cart-btn:hover {
+  background: #7f1d1d;
+  color: white;
+}
+
+/* ===========================
+   GIỎ HÀNG SIDEBAR
+=========================== */
+.cart-sidebar {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.cart-sidebar.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cart-container {
+  width: 420px;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: 0.3s ease;
+}
+
+.cart-sidebar.open .cart-container {
+  transform: translateX(0);
+}
+
+.cart-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-header h3 {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.close-cart {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.cart-items-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.empty-cart-msg {
+  text-align: center;
+  color: #888;
+  margin-top: 50px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.cart-item-img {
+  width: 70px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.cart-item-price {
+  color: #7f1d1d;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.cart-item-qty-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  width: max-content;
+  margin-top: 8px;
+}
+
+.qty-btn {
+  background: none;
+  border: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.qty-num {
+  width: 30px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.remove-item-btn {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.remove-item-btn:hover {
+  color: #7f1d1d;
+}
+
+.cart-footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  background: #fbfaf7;
+}
+
+.cart-total-box {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.cart-total-price {
+  color: #7f1d1d;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 15px;
+  background: #7f1d1d;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.checkout-btn:hover {
+  background: #5c1414;
+}
+
+/* ===========================
+   FOOTER & RESPONSIVE ĐA MÀN HÌNH
+=========================== */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  margin-top: 50px;
+}
+
+/* Máy tính bảng / Laptop nhỏ: Hiển thị 3 cột */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Điện thoại di động: Hiển thị 2 cột gọn gàng */
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .cart-container {
+    width: 100%;
+  }
+}

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T.M.H Menswear</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="logo">T.M.H</div>
+
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Tìm sản phẩm..." />
+        <button id="search-submit">🔍</button>
+      </div>
+
+      <div class="nav-icons">
+        <span class="auth-btn" id="auth-trigger">👤 Đăng nhập / Đăng ký</span>
+        <span class="cart-btn" id="cart-trigger">
+          🛒 Giỏ hàng (<span id="cart-count">0</span>)
+        </span>
+      </div>
+    </header>
+
+    <section class="hero-banner">
+      <div class="slide active">
+        <img
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600"
+          alt="Banner 1"
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1600"
+          alt="Banner 2"
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1600"
+          alt="Banner 3"
+        />
+      </div>
+
+      <div class="banner-overlay"></div>
+
+      <div class="banner-content">
+        <h1>T.M.H</h1>
+        <p>Tinh giản trong thiết kế - Tinh tế trong từng chi tiết</p>
+      </div>
+    </section>
+
+    <section class="mega-categories">
+      <h2 class="section-title">BỘ SƯU TẬP CHÍNH</h2>
+      <div class="categories-grid">
+        <a href="ao.html" class="category-box">
+          <div class="category-image">
+            <img src="anh-san-pham/san pham ao/anh-nen.png" alt="Áo nam" />
+          </div>
+          <div class="category-overlay">
+            <h3>ÁO NAM</h3>
+            <p>Sơ mi, Polo, Áo thun</p>
+            <span class="view-more">XEM SẢN PHẨM →</span>
+          </div>
+        </a>
+
+        <div class="category-box" data-category="quan">
+          <div class="category-image">
+            <img
+              src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=700"
+              alt="Quần nam"
+            />
+          </div>
+          <div class="category-overlay">
+            <h3>QUẦN NAM</h3>
+            <p>Denim, Khaki, Quần tây</p>
+            <span class="view-more">XEM SẢN PHẨM →</span>
+          </div>
+        </div>
+
+        <div class="category-box" data-category="trang-suc">
+          <div class="category-image">
+            <img
+              src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=700"
+              alt="Trang sức"
+            />
+          </div>
+          <div class="category-overlay">
+            <h3>TRANG SỨC</h3>
+            <p>Nhẫn bạc, vòng tay</p>
+            <span class="view-more">XEM SẢN PHẨM →</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="main-container">
+      <section class="products-section">
+        <h2 class="section-title">SẢN PHẨM</h2>
+        <div class="products-grid" id="products-list">
+          <div
+            class="product-card"
+            data-type="ao"
+            data-id="1"
+            data-price="299000"
+          >
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500"
+                alt="Áo thun hữu cơ"
+              />
+            </div>
+            <div class="product-info">
+              <p class="product-tag">ÁO NAM</p>
+              <p class="product-title">Áo thun hữu cơ</p>
+              <p class="product-price">299.000 đ</p>
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+
+          <div
+            class="product-card"
+            data-type="ao"
+            data-id="2"
+            data-price="350000"
+          >
+            <div class="product-image">
+              <img
+                src="anh-san-pham/san pham ao/so-mi2.png"
+                alt="Sơ mi công sở"
+              />
+            </div>
+            <div class="product-info">
+              <p class="product-tag">ÁO NAM</p>
+              <p class="product-title">Sơ mi công sở</p>
+              <p class="product-price">350.000 đ</p>
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+
+          <div
+            class="product-card"
+            data-type="ao"
+            data-id="3"
+            data-price="799000"
+          >
+            <div class="product-image">
+              <img
+                src="anh-san-pham/san pham ao/so-mi1.png"
+                alt="Sơ mi cao cấp"
+              />
+            </div>
+            <div class="product-info">
+              <p class="product-tag">ÁO NAM</p>
+              <p class="product-title">Sơ mi cao cấp</p>
+              <p class="product-price">799.000 đ</p>
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+
+          <div
+            class="product-card"
+            data-type="quan"
+            data-id="4"
+            data-price="699000"
+          >
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500"
+                alt="Quần denim dáng suông"
+              />
+            </div>
+            <div class="product-info">
+              <p class="product-tag">QUẦN NAM</p>
+              <p class="product-title">Quần denim dáng suông</p>
+              <p class="product-price">699.000 đ</p>
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="auth-modal" id="auth-modal">
+      <div class="modal-box">
+        <span class="close-modal" id="close-modal">×</span>
+        <div class="modal-tabs">
+          <button class="tab-btn active" id="tab-login">Đăng nhập</button>
+          <button class="tab-btn" id="tab-register">Đăng ký</button>
+        </div>
+
+        <form id="form-login" class="auth-form active">
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" required />
+          </div>
+          <div class="input-group">
+            <label>Mật khẩu</label>
+            <input type="password" required />
+          </div>
+          <button class="auth-submit-btn" type="submit">ĐĂNG NHẬP</button>
+        </form>
+
+        <form id="form-register" class="auth-form">
+          <div class="input-group">
+            <label>Họ tên</label>
+            <input type="text" required />
+          </div>
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" required />
+          </div>
+          <div class="input-group">
+            <label>Mật khẩu</label>
+            <input type="password" required />
+          </div>
+          <button class="auth-submit-btn" type="submit">ĐĂNG KÝ</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-container">
+        <div class="cart-header">
+          <h3>GIỎ HÀNG CỦA BẠN</h3>
+          <span class="close-cart" id="close-cart">×</span>
+        </div>
+
+        <div class="cart-items-list" id="cart-items-list">
+          <p class="empty-cart-msg">Giỏ hàng của bạn đang trống.</p>
+        </div>
+
+        <div class="cart-footer">
+          <div class="cart-total-box">
+            <span>Tổng tiền:</span>
+            <span class="cart-total-price" id="cart-total-price">0 đ</span>
+          </div>
+          <button class="checkout-btn" id="checkout-btn">
+            TIẾN HÀNH THANH TOÁN
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">© 2026 T.M.H Menswear</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
