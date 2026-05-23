@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px 50px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar .logo {
+    color: #000000;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    position: absolute;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    text-decoration: underline;
+}
+
+.page-title {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.page-title h1 {
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.page-title p {
+    color: #666;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.section-heading {
+    text-align: center;
+    margin: 50px 0 20px 0;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.product-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    overflow-x: auto;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border: none;
+    padding: 0;
+    width: calc(25% - 4px);
+    min-width: 250px;
+    text-align: center;
+    box-shadow: none;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.product-card h3 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #000000;
+    margin: 15px 0 5px 0;
+}
+
+.product-card .price {
+    color: #666666;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0;
+    cursor: pointer;
+    width: 100%;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-buy:hover {
+    background-color: #333333;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #ffffff;
+    color: #666666;
+    font-size: 12px;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 60px;
+}
